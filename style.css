@@ -1,0 +1,196 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+ 
+}
+
+
+nav{
+    text-align: center;
+    font-family:monospace;
+}
+
+nav a{
+    color: black;
+    text-decoration: none;
+    padding: 0px 50px 10px 0;
+    font-size: 25pt;
+    position: relative;
+}
+
+nav a::after{
+    content: " ";
+    width: 0%;
+    height: 4px;
+    background-color: black;
+    position:absolute ;
+    bottom: 0;
+    left: 0;
+    transition: 0.5s ease-in-out;
+}
+
+nav a:hover::after{
+    width: 100%;
+
+}
+
+.img-int{
+    width: 100%;
+    min-height: 100vh;
+    background-image: url(./IMAGENS/cerebro.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+
+hr{
+    padding: 20px;
+}
+
+.h11{
+    text-align: center;
+     justify-content: center;
+     padding: 60px;
+     color:white; 
+     font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; 
+     font-size: 70px;
+}
+
+.conteiner{
+    width: 100%;
+    max-width: 500px;
+    background-color: transparent;
+    padding: 35px;
+    border: 2px solid white;
+    backdrop-filter: blur(0px);
+    overflow: hidden;
+    transition: backdrop-filter 0.5s;
+}
+
+.text{
+    color: white;
+    position: relative;
+    top: 200px;
+    transition: top 1s;
+}
+
+.conteiner:hover .text{
+    top: 0;
+}
+
+.conteiner:hover{
+    backdrop-filter: blur(10px);
+}
+
+.texto-animado{
+    height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #b8cfac;
+    color: white;
+}
+
+.txt-animado{
+    font-size: 45px;
+    font-weight: 300;
+}
+
+.txt-animado span{
+    position: relative;
+}
+
+.txt-animado span::before{
+    content: "";
+    color: white;
+    animation: palavras 20s infinite;
+}
+
+.txt-animado span::after{
+    content: "";
+    position: absolute;
+    height: 100%;
+    border-left: 2px solid white;
+    right: -10px;
+    animation: cursor .8s infinite, digita 20s steps(15) infinite;
+    width: calc(100% + 18px);
+    background-color: #b8cfac;
+}
+
+@keyframes cursor {
+    0%{
+        border-left: 2px solid black
+    }
+}
+
+@keyframes digita{
+    10%,15%,30%,35%,50%,55%,70%,75%,90%,95%{
+        width: 0;
+    }
+    5%,20%,25%,40%,45%,60%,65%,80%,85%{
+        width: calc(100% + 18px);
+    }
+}
+
+@keyframes palavras {
+    0%, 20%{
+        content: "Inteligência Artificial ";
+    }
+    21%,40%{
+        content: "IA  ";
+    }
+    41%,60%{
+        content: "Tecnologia Cognitiva ";
+    }
+    61%,80%{
+        content: "Sistemas autônomos ";
+    }
+    81%,100%{
+        content: "Sistema Inteligênte ";
+    }
+}
+
+.box-degrade{
+    width: 100%;
+    padding: 300px 0;
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    align-items: center;
+    justify-content: center;
+    background-image: linear-gradient(to left,#91ae81,#8fbc8f,#6ecc3c);
+    background-size: 500% 100%;
+    animation: degrade-animado 5s infinite alternate ;
+}
+
+@keyframes degrade-animado {
+    0%{
+        background-position-x: 0;
+    }    
+    100%{
+        background-position-x: 100%;
+    }
+}
+
+footer{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+ul{
+    list-style-type: none;
+    display: flex;
+    position: relative;
+}
+
+ul li{
+    width: 80px;
+    height: 80px;
+
+    background-color: white;
+}
